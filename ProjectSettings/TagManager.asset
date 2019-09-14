@@ -20,7 +20,7 @@ TagManager:
   - Pickup
   - IgnorePlayer
   - Player
-  - 
+  - Background
   - 
   - 
   - 
@@ -39,9 +39,18 @@ TagManager:
   - PlayerDrop
   - PlateformThrought
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1398240727
+    locked: 0
+  - name: Platform
+    uniqueID: 2914495671
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Front
-    uniqueID: 3405993979
+  - name: Player
+    uniqueID: 2209097647
+    locked: 0
+  - name: Foreground
+    uniqueID: 3970431091
     locked: 0
