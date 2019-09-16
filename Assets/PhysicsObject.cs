@@ -10,11 +10,15 @@ public class PhysicsObject : MonoBehaviour
     // the protected keyword here protects these variables from being globally changed by a derivative class. 
     // Each derivative class can change it's own local version of these variables, but these changes do not propagate
     // back to the parent class (PhysicsObject)
+    protected Vector2 currentGravity;
+
     protected bool grounded;
     protected Vector2 groundNormal;
 
     protected Vector2 targetVelocity;
     protected Vector2 velocity;
+    protected Vector2 acceleration;
+    protected Vector2 gravity;
     protected Rigidbody2D rb2D;
     
     protected ContactFilter2D contactFilter;
@@ -29,9 +33,12 @@ public class PhysicsObject : MonoBehaviour
     {
         // get the rigidbody2D component of current object
         rb2D = GetComponent<Rigidbody2D>();
+        // assign gravity to user input unless it is overridden later
+        gravity = gravityModifier * Physics2D.gravity;
+        // Debug.Log(string.Format("OnEnable gravity {0}\n", gravity));
     }
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         // ignore any contacts with trigger colliders (Allows player to move through triggers)
         contactFilter.useTriggers = false;
@@ -58,15 +65,16 @@ public class PhysicsObject : MonoBehaviour
     {
         // initialize player as ungrounded
         grounded = false;
-        // constantly add velocity due to gravity
-        velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
+        // calculate acceleration vector
+        acceleration = gravity;
+        // calculate new velocity due to acceleration
+        velocity += acceleration * Time.deltaTime;
         // add input velocity in x direction
         velocity.x = targetVelocity.x;
         // create vector along the ground movement direction (perpendicular to ground normal)
         Vector2 moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
-
-        // calculate change in position for this timestep
-        Vector2 deltaPosition = velocity * Time.deltaTime;
+        // calculate change in position for this timestep (assumes constant acceleration)
+        Vector2 deltaPosition = velocity * Time.deltaTime + 0.5f * acceleration * Time.deltaTime * Time.deltaTime;
         // calculate movement vector along ground direction
         Vector2 move = moveAlongGround * deltaPosition.x;
         // move along ground

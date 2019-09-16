@@ -5,17 +5,30 @@ using UnityEngine;
 public class PlayerPlatformerController : PhysicsObject
 {
 
-    public float jumpTakeOffSpeed = 7;
+    public float jumpHeight = 2;
+    public float jumpDistance = 3;
+    // public float jumpTakeOffSpeed = 7;
     public float maxSpeed = 7;
 
     private SpriteRenderer spriteR;
     private Animator animator;
+    private float jumpTakeOffSpeed;
 
     void Awake()
     {
         // get components of player object
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         animator = gameObject.GetComponent<Animator>();
+    }
+
+    // called right before the first frame
+    private void Start()
+    {
+        // calculate jump take off speed and gravity
+        jumpTakeOffSpeed = (2 * jumpHeight * maxSpeed) / jumpHeight;
+        gravity = (2 * jumpHeight * maxSpeed * maxSpeed) / (jumpHeight * jumpHeight) * Physics2D.gravity.normalized;
+        // Debug.Log(string.Format("jumpTakeOffSpeed {0}\n", jumpTakeOffSpeed));
+        // Debug.Log(string.Format("Awake gravity {0}\n", gravity));
     }
 
     protected override void ComputeVelocity()
@@ -35,6 +48,7 @@ public class PlayerPlatformerController : PhysicsObject
             if (velocity.y > 0)
             {
                 // reduce their velocity in the y direction by half
+                // TODO: Change this to affect the gravity instead of the acceleration
                 velocity.y = velocity.y * 0.5f;
             }
         }
