@@ -10,8 +10,6 @@ public class PhysicsObject : MonoBehaviour
     // the protected keyword here protects these variables from being globally changed by a derivative class. 
     // Each derivative class can change it's own local version of these variables, but these changes do not propagate
     // back to the parent class (PhysicsObject)
-    protected Vector2 currentGravity;
-
     protected bool grounded;
     protected Vector2 groundNormal;
 
