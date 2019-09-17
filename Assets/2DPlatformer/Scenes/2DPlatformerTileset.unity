@@ -5179,6 +5179,11 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 508922154834902289, guid: 9da02f1e8b78fa74f985f716bbfdfe70,
+        type: 3}
+      propertyPath: collisionSlipFactor
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9da02f1e8b78fa74f985f716bbfdfe70, type: 3}
 --- !u!1 &655226981

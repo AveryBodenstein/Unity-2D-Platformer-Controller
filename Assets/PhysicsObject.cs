@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: fix slopes!!! right now they're very inconsistent... for some reason. Sometimes 
+
 public class PhysicsObject : MonoBehaviour
 {
     public float gravityModifier = 1f;  // allows user to change strength of gravity
     public float minGroundNormalY = 0.65f; // how flat a surface needs to be to be considered 'ground'
+    [Range(-1f,1f)] public float collisionSlipFactor = 0.5f; // how slippery collisions are (1 is all horizontal velocity is conserved, -1 is no horizontal velocity is maintained);
 
     // the protected keyword here protects these variables from being globally changed by a derivative class. 
     // Each derivative class can change it's own local version of these variables, but these changes do not propagate
     // back to the parent class (PhysicsObject)
     protected bool grounded;
-    protected Vector2 groundNormal;
+    protected Vector2 groundNormal = new Vector2(0.0f,1.0f);
 
     protected Vector2 targetVelocity;
     protected Vector2 velocity;
@@ -67,10 +70,10 @@ public class PhysicsObject : MonoBehaviour
         acceleration = gravity;
         // calculate new velocity due to acceleration
         velocity += acceleration * Time.deltaTime;
-        // add input velocity in x direction
-        velocity.x = targetVelocity.x;
+        // add input velocity in x direction (note groundNormal.y here increases speed up hills)
+        velocity.x = targetVelocity.x * (1.0f / groundNormal.y);
         // create vector along the ground movement direction (perpendicular to ground normal)
-        Vector2 moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
+        Vector2 moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x).normalized;
         // calculate change in position for this timestep (assumes constant acceleration)
         Vector2 deltaPosition = velocity * Time.deltaTime + 0.5f * acceleration * Time.deltaTime * Time.deltaTime;
         // calculate movement vector along ground direction
