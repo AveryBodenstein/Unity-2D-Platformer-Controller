@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 424671834229839691}
   - component: {fileID: 451447703303867695}
   - component: {fileID: 550346788675147095}
-  - component: {fileID: 570011106827185283}
   - component: {fileID: 508922154834902289}
+  - component: {fileID: 2318419432375602189}
   m_Layer: 13
   m_Name: Player
   m_TagString: Player
@@ -123,22 +123,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &570011106827185283
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510025855315298915}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.43}
-  m_Size: {x: 0.38, y: 0.9}
-  m_Direction: 0
 --- !u!114 &508922154834902289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,5 +137,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityModifier: 1
   minGroundNormalY: 0.65
-  jumpTakeOffSpeed: 7
+  collisionSlipFactor: 0.5
+  jumpHeight: 2
+  jumpDistance: 3
+  fallDistance: 1.5
   maxSpeed: 7
+--- !u!70 &2318419432375602189
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510025855315298915}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0066850185, y: 0.4465183}
+  m_Size: {x: 0.38050318, y: 0.8930366}
+  m_Direction: 0

@@ -73,6 +73,10 @@ TextureImporter:
     21300136: CavesBackgroundTop
     21300138: CaveBotSlopeRightWall
     21300140: CaveBotSlopeLeftWall
+    21300142: CaveSlopeInnerCornerBottomLeft
+    21300144: CaveSlopeInnerCornerTopLeft
+    21300146: CaveSlopeInnerCornerTopRight
+    21300148: CaveSlopeInnerCornerBottomRight
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -188,7 +192,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 23}
+        - {x: 32, y: 23}
+        - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: 875978e9828975b4b9caa30de943e397
@@ -208,7 +216,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 23}
+        - {x: 32, y: 23}
+        - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: a8246e225dcf00546aa8df0262db370e
@@ -228,7 +240,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 23}
+        - {x: 32, y: 23}
+        - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: edbbc521beaf1b645b6d1261bbacb4ec
@@ -250,9 +266,9 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -32, y: -32}
-        - {x: -32, y: 32}
-        - {x: -1, y: 0}
-        - {x: 32, y: -32}
+        - {x: -32, y: 23}
+        - {x: -5, y: -4}
+        - {x: 23, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: f6b817a0246b9f349acf6d0234558acc
@@ -273,9 +289,9 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -32, y: -32}
-        - {x: 1, y: 1}
-        - {x: 32, y: 32}
+      - - {x: -23, y: -32}
+        - {x: 5, y: -4}
+        - {x: 32, y: 23}
         - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
@@ -356,7 +372,12 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 32}
+        - {x: 23, y: 32}
+        - {x: 32, y: 23}
+        - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: a354371fb9472e74b9a2ddc4ba48ba65
@@ -376,7 +397,12 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 23}
+        - {x: -23, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: 78fd64cced1b15342b8f27ebd5f976e9
@@ -644,7 +670,12 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 32}
+        - {x: 23, y: 32}
+        - {x: 32, y: 23}
+        - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: b169985c8f903dd489febcd219ae1f8d
@@ -743,8 +774,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 23}
+        - {x: -23, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: -32}
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 23}
+        - {x: -23, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: f4656d5af45c4304390a7c1bdaa09175
@@ -764,7 +805,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 23}
+        - {x: 32, y: 23}
+        - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: 93926fd9907d3bb448fd32164ec46e0f
@@ -784,7 +829,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 23}
+        - {x: 32, y: 23}
+        - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: 8815582fee8d0a444b783abd1e9c1445
@@ -804,7 +853,12 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 32}
+        - {x: 23, y: 32}
+        - {x: 32, y: 23}
+        - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: ba00719d2092ff44da9fc88cda0b30f2
@@ -824,7 +878,12 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 23}
+        - {x: -23, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: -32}
       tessellationDetail: 0
       bones: []
       spriteID: 8d134a3729dab394bb983bb6837ffb91
@@ -888,6 +947,106 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 31e80712869195c4bb8b1b3a5e345760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaveSlopeInnerCornerBottomLeft
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -23, y: -32}
+        - {x: -32, y: -23}
+        - {x: -32, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: -32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8455f425bb8b7459a9c93140574c38
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaveSlopeInnerCornerTopLeft
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 23}
+        - {x: -23, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: -32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688a87da0d824514b971d95a02e549eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaveSlopeInnerCornerTopRight
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 32}
+        - {x: 23, y: 32}
+        - {x: 32, y: 23}
+        - {x: 32, y: -32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62ab0218acc4ae429c324d547305c32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaveSlopeInnerCornerBottomRight
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32, y: -32}
+        - {x: -32, y: 32}
+        - {x: 32, y: 32}
+        - {x: 32, y: -23}
+        - {x: 23, y: -32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc5e441632867c49b6a88b974dcea7f
       vertices: []
       indices: 
       edges: []

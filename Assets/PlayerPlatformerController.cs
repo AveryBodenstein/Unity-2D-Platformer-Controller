@@ -4,6 +4,12 @@ using UnityEngine;
 
 // TODO: Fix Slope jumping (nearly no horizontal velocity possible)
 // TODO: Implement minimum jump height input?
+// TODO: Implement maximum fall speed
+// TODO: Implement incresed fall speed on down arrow key press
+// TODO: Implement oneshot audio when hitting walls/floor/ceiling
+// TODO: Implement "jump leniency" allowing jumping slightly after leaving a platform
+// TODO: stop upward momentum when hitting a side wall? right now character slides unrealistically
+
 
 public class PlayerPlatformerController : PhysicsObject
 {

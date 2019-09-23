@@ -23,7 +23,7 @@ MonoBehaviour:
   - m_OriginalSprite: {fileID: 21300002, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
     m_OverrideSprite: {fileID: 21300002, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
   - m_OriginalSprite: {fileID: 21300006, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
-    m_OverrideSprite: {fileID: 21300064, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
+    m_OverrideSprite: {fileID: 21300052, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
   - m_OriginalSprite: {fileID: 21300008, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
     m_OverrideSprite: {fileID: 21300054, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
   - m_OriginalSprite: {fileID: 21300016, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
@@ -34,6 +34,14 @@ MonoBehaviour:
     m_OverrideSprite: {fileID: 21300012, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
   - m_OriginalSprite: {fileID: 21300014, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
     m_OverrideSprite: {fileID: 21300014, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
+  - m_OriginalSprite: {fileID: 21300034, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
+    m_OverrideSprite: {fileID: 21300142, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
+  - m_OriginalSprite: {fileID: 21300032, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
+    m_OverrideSprite: {fileID: 21300148, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
+  - m_OriginalSprite: {fileID: 21300030, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
+    m_OverrideSprite: {fileID: 21300144, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
+  - m_OriginalSprite: {fileID: 21300028, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
+    m_OverrideSprite: {fileID: 21300146, guid: 77060c312d1289b41a98bf743963e44c, type: 3}
   m_OverrideTilingRules: []
   m_OverrideDefault:
     m_Enabled: 0
