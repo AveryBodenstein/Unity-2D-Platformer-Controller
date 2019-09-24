@@ -4,16 +4,37 @@ using UnityEngine;
 
 // TODO: fix slopes!!! right now they're very inconsistent... for some reason. Sometimes 
 
+// PositionState tracks how the object is interacting with the world
+public struct PositionState
+{
+    public bool pushRight;
+    public bool pushLeft;
+    public bool pushBottom;
+    public bool pushTop;
+
+    public bool grounded;
+
+    public void Reset()
+    {
+        pushRight = false;
+        pushLeft = false;
+        pushBottom = false;
+        pushTop = false;
+    }
+}
+
 public class PhysicsObject : MonoBehaviour
 {
     public float gravityModifier = 1f;  // allows user to change strength of gravity
     public float minGroundNormalY = 0.65f; // how flat a surface needs to be to be considered 'ground'
+    public float minWallNormalX = 0.95f; // how vertical a surface needs to be to be considered a 'wall'
     [Range(-1f,1f)] public float collisionSlipFactor = 0.5f; // how slippery collisions are (1 is all horizontal velocity is conserved, -1 is no horizontal velocity is maintained);
 
     // the protected keyword here protects these variables from being globally changed by a derivative class. 
     // Each derivative class can change it's own local version of these variables, but these changes do not propagate
     // back to the parent class (PhysicsObject)
-    protected bool grounded;
+    protected PositionState positionState;
+    protected PositionState prevState;
     protected Vector2 groundNormal = new Vector2(0.0f,1.0f);
 
     protected Vector2 targetVelocity;
@@ -64,8 +85,10 @@ public class PhysicsObject : MonoBehaviour
     // FixedUpdate is called at a fixed rate for physics simulation
     private void FixedUpdate()
     {
-        // initialize player as ungrounded
-        grounded = false;
+        // store previouse player state
+        prevState = positionState;
+        // reset current player state
+        positionState.Reset();
         // calculate acceleration vector
         acceleration = gravity;
         // calculate new velocity due to acceleration
@@ -111,13 +134,33 @@ public class PhysicsObject : MonoBehaviour
                 if (currentNormal.y > minGroundNormalY)
                 {
                     // player is grounded
-                    grounded = true;
+                    positionState.grounded = true;
                     // if currently calculating y movement zero out x portion of collision normal
                     // this enables 'scraping' behavior on slope collision
                     if (yMovement)
                     {
                         groundNormal = currentNormal;
                         currentNormal.x = 0;
+                    }
+                }
+                // check if collision with left 'wall'
+                else if (currentNormal.x > minWallNormalX)
+                {
+                    // update current state
+                    positionState.pushLeft = true;
+                    if (!prevState.pushLeft)
+                    {
+                        Debug.Log("pushes left!");
+                    }
+                }
+                // check if collision with right 'wall'
+                else if (currentNormal.x < -minWallNormalX)
+                {
+                    // update current state
+                    positionState.pushRight = true;
+                    if (!prevState.pushRight)
+                    {
+                        Debug.Log("Pushes Right!");
                     }
                 }
                 // get component of velocity in direction of ground

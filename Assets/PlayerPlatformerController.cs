@@ -51,7 +51,7 @@ public class PlayerPlatformerController : PhysicsObject
         // get input on horizontal axis
         move.x = Input.GetAxis("Horizontal");
         // if jump button is held down and we are on the ground
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump") && positionState.grounded)
         {
             gravity = defaultGravity;
             velocity.y = jumpTakeOffSpeed;
@@ -81,7 +81,7 @@ public class PlayerPlatformerController : PhysicsObject
         }
 
         // set animator boolean "grounded" to the value of our grounded variable
-        animator.SetBool("grounded", grounded);
+        animator.SetBool("grounded", positionState.grounded);
         // set animator float "velocityX" to percentage of full speed
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
