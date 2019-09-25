@@ -67,6 +67,20 @@ public class PlayerPlatformerController : PhysicsObject
             }
         }
 
+        // set animator boolean "grounded" to the value of our grounded variable
+        animator.SetBool("grounded", positionState.grounded);
+        // set animator float "velocityX" to percentage of full speed
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        // set animator bool pushesRight
+        if (positionState.pushRight || positionState.pushLeft)
+        {
+            animator.SetBool("pushes", true);
+        }
+        else
+        {
+            animator.SetBool("pushes", false);
+        }
+
         // check if sprite needs to be flipped
         bool flipSprite = (spriteR.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
         if (flipSprite)
@@ -79,11 +93,6 @@ public class PlayerPlatformerController : PhysicsObject
         {
             gravity = fallGravity;
         }
-
-        // set animator boolean "grounded" to the value of our grounded variable
-        animator.SetBool("grounded", positionState.grounded);
-        // set animator float "velocityX" to percentage of full speed
-        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
         // set target velocity based on input and max speed
         targetVelocity = move * maxSpeed;
