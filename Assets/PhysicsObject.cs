@@ -20,6 +20,7 @@ public struct PositionState
         pushLeft = false;
         pushBottom = false;
         pushTop = false;
+        grounded = false;
     }
 }
 
