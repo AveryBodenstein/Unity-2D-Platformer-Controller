@@ -8,6 +8,7 @@ using UnityEngine;
 // TODO: Implement oneshot audio when hitting walls/floor/ceiling
 // TODO: Implement "jump leniency" allowing jumping slightly after leaving a platform
 // TODO: stop upward momentum when hitting a side wall? right now character slides unrealistically
+// TODO: prevent unneccessary sprite flipping in X
 
 
 public class PlayerPlatformerController : PhysicsObject
