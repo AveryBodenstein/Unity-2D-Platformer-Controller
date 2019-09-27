@@ -94,6 +94,12 @@ public class PhysicsObject : MonoBehaviour
         acceleration = gravity;
         // calculate new velocity due to acceleration
         velocity += acceleration * Time.deltaTime;
+        // check if we are in the air
+        if (!positionState.grounded)
+        {
+            groundNormal.x = 0.0f;
+            groundNormal.y = 1.0f;
+        }
         // add input velocity in x direction (note groundNormal.y here increases speed up hills)
         velocity.x = targetVelocity.x * (1.0f / groundNormal.y);
         // create vector along the ground movement direction (perpendicular to ground normal)
